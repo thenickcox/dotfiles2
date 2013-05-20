@@ -20,6 +20,9 @@ alias bunbang='bundle install && !!'
 alias c='cd ~/code'
 alias d='cd ~/.dotfiles'
 alias dbprep='rdm && rdtp'
+alias devsql="/usr/local/mysql/bin/mysql --user=root --database navcan_development"
+alias devtail="less -r +F log/development.log"
+alias drb="rspec --drb"
 alias gad='git add .'
 alias gc='git commit'
 alias gca='git commit -a'
@@ -31,6 +34,7 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias get='sudo apt-get install'
 alias gg='git lg'
+alias gld1="git logdec1"
 alias gpush='git push'
 alias gpsuh='git push'
 alias gpr='git pull --rebase'
@@ -38,10 +42,8 @@ alias grc='git rebase --continue'
 alias grake='rspec --drb spec/ && cucumber --drb features/'
 alias h='heroku'
 alias hpush='git push heroku'
-alias irb='irb --readline -r irb/completion'
-alias journal='vim ~/Dropbox/docs/journal/2011.txt'
 alias killruby='killall -9 ruby'
-alias pc='production-console'
+alias migrate="bundle exec rake db:migrate --trace"
 alias patch='git format-patch HEAD^ --stdout > patch.diff'
 alias prepdb='dbprep'
 alias remore='!! | more'
@@ -54,32 +56,17 @@ alias rc='rails console'
 alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump && rake db:test:prepare'
 alias rdm="be rake db:migrate"
 alias rdtp="be rake db:test:prepare"
+alias rollback="be rake db:rollback"
 alias rs='bundle install && rails server -p 3001'
 alias safepush='git pull --rebase && bundle install && rdm && rake && git push'
 alias sc='staging-console'
-alias so='source ~/.dotfiles/bash/aliases'
-alias sp='safepush'
-alias ss='ruby app.rb'
 alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
-alias staging='git push heroku-staging master'
-alias t='cd ~/code/trajectory'
+alias testtail="less -r +F log/test.log"
+alias testprep="bundle exec rake db:test:prepare --trace"
+alias testsql="/usr/local/mysql/bin/mysql --user=root --database navcan_test"
 alias u='cd ..'
-alias v='cd ~/code/vertical-server'
 alias vi='vim'
-alias y='cd ~/code/ybuy'
+alias vim='mvim'
 
-# Heroku staging
-alias staging-console='heroku run console --remote staging'
-alias staging-tail='heroku logs --tail --remote staging'
 
-# Heroku production
-alias production-console='heroku run console --remote production'
-alias production-tail='heroku logs --tail --remote production'
-
-# # Heroku databases
-alias db-pull-staging='heroku db:pull --remote staging --confirm `basename $PWD`-staging'
-alias db-pull-production='heroku db:pull --remote production --confirm `basename $PWD`-production'
-alias db-copy-production-to-staging='heroku pgbackups:restore DATABASE `heroku pgbackups:url --remote production` --remote staging  --confirm `basename $PWD`-staging'
-alias db-backup-production='heroku pgbackups:capture --remote production'
-alias db-backups='heroku pgbackups --remote production'
