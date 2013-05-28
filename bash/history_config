@@ -8,4 +8,4 @@ export HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # Unify histories across screen sessions
-PROMPT_COMMAND="$PROMPT_COMMAND;history -a; history -n"
+# PROMPT_COMMAND="$PROMPT_COMMAND;history -a; history -n"
