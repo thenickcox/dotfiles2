@@ -128,6 +128,14 @@ au FileType coffee setlocal shiftwidth=2 tabstop=2
 au FileType cucumber setlocal shiftwidth=2 tabstop=2
 au FileType ruby setlocal shiftwidth=2 tabstop=2
 
+" vim, please stop littering my directories with .swp files.
+" backup to ~/.tmp
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
+
 " Populate args list with files in the quickfix window. Obtained from.. http://stackoverflow.com/questions/5686206/search-replace-using-quickfix-list-in-vim
 command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
 function! QuickfixFilenames()
