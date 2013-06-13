@@ -24,6 +24,7 @@ alias devsql="/usr/local/mysql/bin/mysql --user=root --database navcan_developme
 alias devtail="less -r +F log/development.log"
 alias drb="rspec --drb"
 alias gad='git add .'
+alias gbranch='git branch'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gcaa='git commit -a --amend -C HEAD'
@@ -48,6 +49,8 @@ alias h='heroku'
 alias hpush='git push heroku'
 alias killruby='killall -9 ruby'
 alias migrate="bundle exec rake db:migrate --trace"
+alias mux="~/boot_tmux_env"
+alias ncdir='cd ~/Source/gc'
 alias patch='git format-patch HEAD^ --stdout > patch.diff'
 alias prepdb='dbprep'
 alias remore='!! | more'
