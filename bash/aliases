@@ -20,7 +20,7 @@ alias bunbang='bundle install && !!'
 alias c='cd ~/code'
 alias d='cd ~/.dotfiles'
 alias dbprep='rdm && rdtp'
-alias devsql="/usr/local/mysql/bin/mysql --user=root --database navcan_development"
+alias devsql="/usr/local/bin/mysql --user=root --database navcan_development"
 alias devtail="less -r +F log/development.log"
 alias drb="rspec --drb"
 alias gad='git add .'
@@ -36,6 +36,7 @@ alias gdc='git diff --cached'
 alias get='sudo apt-get install'
 alias gfo='git fetch origin'
 alias gg='git lg'
+alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gld1='git logdec1'
 alias gpom='git pull origin master'
 alias gpush='git push'
@@ -74,6 +75,5 @@ alias testprep="bundle exec rake db:test:prepare --trace"
 alias testsql="/usr/local/mysql/bin/mysql --user=root --database navcan_test"
 alias u='cd ..'
 alias vi='vim'
-alias vim='mvim'
 
 
