@@ -171,11 +171,12 @@ nmap <silent> <leader>mn :call MarkWindowSwap()<CR>
 nmap <silent> <leader>ms :call DoWindowSwap()<CR>
 """ END SWAPPING SPLITS """
 
-" Force recognition of coffeescript files
+" Set syntax highlighting
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 autocmd BufNewFile,BufRead *Cakefile set filetype=coffee
 autocmd BufNewFile,BufRead *.coffeekup,*.ck set filetype=coffee
 autocmd BufNewFile,BufRead *.ck set filetype=coffee
+autocmd BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 
 function! s:DetectCoffee()
     if getline(1) =~ '^#!.*\<coffee\>'
@@ -184,3 +185,5 @@ function! s:DetectCoffee()
 endfunction
 
 autocmd BufNewFile,BufRead * call s:DetectCoffee()
+
+" Handlebars syntax highlighting
