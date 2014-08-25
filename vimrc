@@ -6,10 +6,18 @@ syntax enable
 let mapleader = ","
 
 set background=dark
-colorscheme SolarizedDark_modified
+let g:solarized_termtrans = 1
+colorscheme solarized
+
 set guifont=Monaco:h13
 set guioptions-=T
 set hlsearch
+let &t_Co=256
+
+set clipboard=unnamed
+
+" Make backspace do that thing it's supposed to do
+set backspace=2
 
 " Dont ask to re-read files changed outside vim
 set autoread
@@ -25,19 +33,6 @@ endif
 endfunc
 
 nnoremap <C-L> :call g:ToggleNuMode()<cr>
-
-" toggle red line at 81st character to keep lines under 80 chars
-set colorcolumn=81
-function! g:ToggleRedline()
-if(&colorcolumn == 81)
-set colorcolumn=0
-else
-set colorcolumn=81
-endif
-endfunc
-
-nnoremap <C-I> :call g:ToggleRedline()<cr>
-
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -69,9 +64,11 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'Rename'
 
 Bundle 'tpope/vim-rails'
+Bundle 'thoughtbot/vim-rspec'
 
 " Git diffs in the gutter
 Bundle 'airblade/vim-gitgutter'
+
 
 filetype plugin indent on
 set ignorecase
@@ -82,11 +79,17 @@ nmap <leader>sl  :rightbelow vnew<CR>
 nmap <leader>sk  :leftabove  new<CR>
 nmap <leader>sj  :rightbelow new<CR>
 
-" arrows traverse splits
+" traverse splits
 nnoremap <leader>wh <C-w>h
 nnoremap <leader>wl <C-w>l
 nnoremap <leader>wj <C-w>j
 nnoremap <leader>wk <C-w>k
+
+" arrow keys resize windows
+nnoremap <UP>    <C-w>+
+nnoremap <DOWN>  <C-w>-
+nnoremap <LEFT>  <C-w>>
+nnoremap <RIGHT> <C-w><
 
 " Ctrl-P settings
 let g:ctrlp_max_height = 20
@@ -106,6 +109,7 @@ set foldmethod=indent
 set foldlevelstart=99
 
 command Wipetabs :%s/	/  /g
+command NoDoubleQuotes :%s/"/'/g
 
 " Random Leader Commands
 " Some inspired by r00k: https://github.com/r00k/dotfiles/blob/master/vimrc
@@ -116,6 +120,8 @@ nnoremap <leader>4 :tabclose<CR>
 nnoremap <leader>. :!
 nnoremap <leader>; :match ExtraWhitespace /\s\s+$/
 nnoremap ; :
+nnoremap <leader>Q :NoDoubleQuotes<CR>
+
 
 " highlight whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -143,6 +149,13 @@ au FileType javascript setlocal shiftwidth=2 tabstop=2
 au FileType coffee setlocal shiftwidth=2 tabstop=2
 au FileType cucumber setlocal shiftwidth=2 tabstop=2
 au FileType ruby setlocal shiftwidth=2 tabstop=2
+
+" running rspec from tmux hotness
+let s:rspec_tmux_command = "tmux send -t 0.1 'rspec --drb {spec}' Enter"
+let g:rspec_command = "!echo " . s:rspec_tmux_command . " && " . s:rspec_tmux_command
+nnoremap <leader>rr :silent call RunNearestSpec()<CR><c-L>
+nnoremap <leader>rf :silent call RunCurrentSpecFile()<CR><c-L>
+nnoremap <leader>rl :silent call RunLastSpec()<CR><c-L>
 
 " Populate args list with files in the quickfix window. Obtained from.. http://stackoverflow.com/questions/5686206/search-replace-using-quickfix-list-in-vim
 command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
