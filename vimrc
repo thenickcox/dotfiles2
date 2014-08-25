@@ -26,6 +26,19 @@ endfunc
 
 nnoremap <C-L> :call g:ToggleNuMode()<cr>
 
+" toggle red line at 81st character to keep lines under 80 chars
+set colorcolumn=81
+function! g:ToggleRedline()
+if(&colorcolumn == 81)
+set colorcolumn=0
+else
+set colorcolumn=81
+endif
+endfunc
+
+nnoremap <C-I> :call g:ToggleRedline()<cr>
+
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
