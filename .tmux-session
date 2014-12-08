@@ -1,0 +1,23 @@
+# Default tmux session
+rename-window -t 0 primary
+send -t 0.0 'vi' Enter
+split-window -t 0.0 -h -p 20
+
+new-window -n secondary
+selectp -t 1.0
+splitw -h -p 50
+selectp -t 1.0
+splitw -v -p 50
+selectp -t 1.2
+splitw -v -p 50
+selectp -t 1.2
+splitw -v -p 50
+
+send -t 1.0 'be pry' Enter
+send -t 1.2 'spork'   Enter
+send -t 1.3 'spork cucumber' Enter
+send -t 1.1 'rails s' Enter
+send -t 1.4 'git st' Enter
+
+select-window -t 0
+select-pane -t 0
