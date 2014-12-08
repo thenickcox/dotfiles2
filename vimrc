@@ -1,6 +1,5 @@
 set nocompatible
 filetype off
-syntax enable
 
 " Set , to be leader key
 let mapleader = ","
@@ -57,20 +56,21 @@ Bundle 'ervandew/supertab'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 "
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/snipmate-snippets'
 Bundle 'ZoomWin'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Rename'
 
 Bundle 'tpope/vim-rails'
 Bundle 'thoughtbot/vim-rspec'
+Bundle 'kchmck/vim-coffee-script'
 
 " Git diffs in the gutter
 Bundle 'airblade/vim-gitgutter'
 
 
+syntax enable
 filetype plugin indent on
+
 set ignorecase
 
 " New buffer at direction
@@ -138,6 +138,9 @@ map n nzz
 
 " Add thor to syntax
 au BufRead,BufNewFile *.thor set filetype=ruby
+
+" Add hamljs to syntax
+autocmd BufNewFile,BufRead,BufFilePost *.*.hamljs set filetype=haml
 
 " Set tab to 2 spaces
 set softtabstop=2
