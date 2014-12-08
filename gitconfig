@@ -1,9 +1,22 @@
 [user]
-	name = thenickcox
+	name = Nick Cox
 	email = nick@nickcox.me
 [alias]
 	st = status
+  a = add -p
+  co = checkout
+  rom = rebase origin/master
 [core]
-	editor = mvim -f
+	editor = /usr/bin/vim
+  excludesfile = /opt/boxen/config/git/gitignore
 [color]
 	ui = true
+
+[hub]
+  protocol = https
+
+[credential]
+  helper = /opt/boxen/bin/boxen-git-credential
+
+[interactive]
+  singlekey = true
