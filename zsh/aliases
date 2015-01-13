@@ -9,7 +9,6 @@ fi
 alias amend="git commit --amend"
 alias asu="cd ~/code/rails/activesupport"
 alias aliases='vi ~/src/dotfiles/zsh/aliases'
-alias b='ssh -t ben@benorenstein.com screen -rd irc'
 alias bake='bundle exec rake'
 alias be='bundle exec'
 alias bi='bundle install'
@@ -23,6 +22,7 @@ alias dbprep='rdm && rdtp'
 alias devsql="/usr/local/bin/mysql --user=root --database navcan_development"
 alias devtail="less -r +F log/development.log"
 alias drb="rspec --drb"
+alias existential='cd ~/sites/existential_operator/ && be middleman build && be middleman s3_sync && git add -A && git commit -m "Build blog `date +%F`" && git push origin master'
 alias gad='git add .'
 alias gbranch='git branch'
 alias gc='git commit'
@@ -56,6 +56,7 @@ alias okgo='git rebase --continue'
 alias patch='git format-patch HEAD^ --stdout > patch.diff'
 alias prepdb='dbprep'
 alias redis='redis-server ~/.redis.conf'
+alias reload='. ~/src/dotfiles/zshrc'
 alias remore='!! | more'
 alias reguard='killall -9 ruby ; guard'
 alias rerake='!! && rake'
