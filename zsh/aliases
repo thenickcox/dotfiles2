@@ -75,6 +75,7 @@ alias sc='staging-console'
 alias spork='nocorrect be spork'
 alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
+alias stpull='git stash && gfo && grom && git stash pop'
 alias testtail="less -r +F log/test.log"
 alias testprep="bundle exec rake db:test:prepare --trace"
 alias testsql="/usr/local/mysql/bin/mysql --user=root --database navcan_test"
