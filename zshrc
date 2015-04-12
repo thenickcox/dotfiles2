@@ -70,3 +70,6 @@ export RUBY_HEAP_FREE_MIN=500000
 
 # Make terminal windows use separate history
 unsetopt sharehistory
+
+export GOPATH=$HOME/go
+PATH=$PATH:$GOPATH/bin

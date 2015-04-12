@@ -153,6 +153,10 @@ au FileType coffee setlocal shiftwidth=2 tabstop=2
 au FileType cucumber setlocal shiftwidth=2 tabstop=2
 au FileType ruby setlocal shiftwidth=2 tabstop=2
 
+" Change tabs for go files
+autocmd FileType go setlocal noexpandtab
+au FileType go setlocal shiftwidth=8 tabstop=8
+
 " running rspec from tmux hotness
 let s:rspec_tmux_command = "tmux send -t 0.1 'rspec --drb {spec}' Enter"
 let g:rspec_command = "!echo " . s:rspec_tmux_command . " && " . s:rspec_tmux_command
