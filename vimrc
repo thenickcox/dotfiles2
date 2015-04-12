@@ -63,6 +63,7 @@ Bundle 'Rename'
 Bundle 'tpope/vim-rails'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'rust-lang/rust.vim'
 
 " Git diffs in the gutter
 Bundle 'airblade/vim-gitgutter'
