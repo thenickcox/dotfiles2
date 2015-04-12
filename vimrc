@@ -96,6 +96,7 @@ let g:ctrlp_max_height = 20
 let g:ctrlp_prompt_mappings = {
     \ 'PrtSelectMove("k")':   ['<Tab>'],
     \ }
+set wildignore+=*/tmp/*
 nnoremap <leader>y :tabe<CR>:CtrlP<CR>
 nnoremap <leader>t :CtrlP<CR>
 

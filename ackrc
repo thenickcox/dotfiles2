@@ -6,3 +6,4 @@ ruby=.haml,.feature,.scss,.coffee
 --ignore-dir=doc
 --ignore-dir=coverage
 --ignore-case
+--ignore-file=is:seed_dump.rb
