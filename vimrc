@@ -160,7 +160,7 @@ autocmd FileType go setlocal noexpandtab
 au FileType go setlocal shiftwidth=8 tabstop=8
 
 " running rspec from tmux hotness
-let s:rspec_tmux_command = "tmux send -t 0.1 'rspec --drb {spec}' Enter"
+let s:rspec_tmux_command = "tmux send -t 0.1 'rspec {spec}' Enter"
 let g:rspec_command = "!echo " . s:rspec_tmux_command . " && " . s:rspec_tmux_command
 nnoremap <leader>rr :silent call RunNearestSpec()<CR><c-L>
 nnoremap <leader>rf :silent call RunCurrentSpecFile()<CR><c-L>
