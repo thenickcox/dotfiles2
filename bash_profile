@@ -15,3 +15,6 @@ fi
 export TERM='xterm-256color'
 
 eval "$(tmuxifier init -)"
+
+export NVM_DIR="/Users/nick/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
