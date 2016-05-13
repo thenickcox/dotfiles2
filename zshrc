@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/src/dotfiles/oh-my-zsh
+ZSH=$HOME/.dotfiles/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -39,6 +39,8 @@ unsetopt correct
 EDITOR=vim
 export EDITOR
 
+# Use emacs mode for Ctrl + A, Ctrl + E
+set -o emacs
 
 # Disable flow control commands (keeps C-s from freezing everything)
 stty start undef
@@ -52,24 +54,30 @@ stty stop undef
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git rvm)
 
-source /opt/boxen/env.sh
-source ~/src/dotfiles/oh-my-zsh/oh-my-zsh.sh
+source ~/.dotfiles/oh-my-zsh/oh-my-zsh.sh
 
 export PATH=/usr/local/bin:$PATH
 
 # Source my custom files after oh-my-zsh so I can override things.
-source ~/src/dotfiles/zsh/aliases
-source ~/src/dotfiles/zsh/functions
+source ~/.dotfiles/zsh/aliases
+source ~/.dotfiles/zsh/functions
 
 # Shaves about 0.5s off Rails boot time (when using perf patch). Taken from https://gist.github.com/1688857
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=1000000000
-export RUBY_HEAP_FREE_MIN=500000
+#export RUBY_GC_HEAP_INIT_SLOTS=1000000
+#export RUBY_HEAP_SLOTS_INCREMENT=1000000
+#export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+#export RUBY_GC_MALLOC_LIMIT=1000000000
+#export RUBY_HEAP_FREE_MIN=500000
 
 # Make terminal windows use separate history
 unsetopt sharehistory
 
 export GOPATH=$HOME/go
 PATH=$PATH:$GOPATH/bin
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+eval "$(rbenv init -)"
+
+export NVM_DIR="/Users/nickcox/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -9,3 +9,5 @@ project-notes.txt
 .*.sw?
 *.*.sw?
 *.sassc
+node_modules
+bower_components

@@ -8,7 +8,7 @@ fi
 
 alias amend="git commit --amend"
 alias asu="cd ~/code/rails/activesupport"
-alias aliases='vi ~/src/dotfiles/zsh/aliases'
+alias aliases='vi ~/.dotfiles/zsh/aliases'
 alias bake='bundle exec rake'
 alias be='bundle exec'
 alias bi='bundle install'
@@ -22,7 +22,7 @@ alias dbprep='rdm && rdtp'
 alias devsql="/usr/local/bin/mysql --user=root --database navcan_development"
 alias devtail="less -r +F log/development.log"
 alias drb="rspec --drb"
-alias existential='cd ~/sites/existential_operator/ && be middleman build && be middleman s3_sync && git add -A && git commit -m "Build blog `date +%F`" && git push origin master'
+alias existential='cd ~/projects/existential_operator/ && be middleman build && be middleman s3_sync && git add -A && git commit -m "Build blog `date +%F`" && git push origin master'
 alias gad='git add .'
 alias gbranch='git branch'
 alias gc='git commit'
@@ -51,7 +51,7 @@ alias hpush='git push heroku'
 alias killruby='killall -9 ruby'
 alias migrate="bundle exec rake db:migrate --trace"
 alias mux="~/src/dotfiles/boot_tmux_env"
-alias ncdir='cd ~/Source/gc'
+alias nukenpm="rm -rf node_modules && npm install"
 alias okgo='git rebase --continue'
 alias patch='git format-patch HEAD^ --stdout > patch.diff'
 alias prepdb='dbprep'
@@ -79,6 +79,7 @@ alias stpull='git stash && gfo && grom && git stash pop'
 alias testtail="less -r +F log/test.log"
 alias testprep="bundle exec rake db:test:prepare --trace"
 alias testsql="/usr/local/mysql/bin/mysql --user=root --database navcan_test"
+alias today="vi ~/projects/eod_email/today.txt"
 alias u='cd ..'
 alias vi='vim'
-
+alias vimrc='vi ~/.dotfiles/vimrc'

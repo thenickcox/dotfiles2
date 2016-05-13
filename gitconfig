@@ -8,15 +8,11 @@
   rom = rebase origin/master
 [core]
 	editor = /usr/bin/vim
-  excludesfile = /opt/boxen/config/git/gitignore
 [color]
 	ui = true
 
 [hub]
   protocol = https
-
-[credential]
-  helper = /opt/boxen/bin/boxen-git-credential
 
 [interactive]
   singlekey = true

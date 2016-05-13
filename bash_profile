@@ -18,3 +18,9 @@ eval "$(tmuxifier init -)"
 
 export NVM_DIR="/Users/nick/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+
+# Tidy for Mac OS X by balthisar.com is adding the new path for Tidy.
+export PATH=/usr/local/bin:$PATH
+
+
